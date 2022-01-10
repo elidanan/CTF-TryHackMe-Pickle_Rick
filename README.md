@@ -30,7 +30,7 @@ What is the first ingredient Rick needs?
     
    It's asking us for a username and password we can use the one we found: R1ckRul3s, Wubbalubbadubdub
     
-5. Now we are presented with a command panel, run ls to see if we find anything intereseting:
+5. Now we are presented with a command panel, run ls to see if we find anything interesting:
     ![Screenshot 2022-01-07 02^%39^%15](https://user-images.githubusercontent.com/86057471/148509156-6115cf70-2fb3-4632-9e04-e667de0d0b67.png)
     
     Two files to look at: Sup3rS3cretPickl3Ingred.txt and clue.txt\
